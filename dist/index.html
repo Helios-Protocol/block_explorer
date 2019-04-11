@@ -1,0 +1,191 @@
+ <!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Helios Protocol Block Explorer</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js"></script>
+    <script src="js/helios-block-explorer-master.js?version=3"></script>
+    <script src="js/utils.js?version=3"></script>
+    <script src="js/visual.js?version=3"></script>
+    <script src="js/main.js?version=3"></script>
+    <script src="js/menu.js?version=3"></script>
+    <script src="js/custom_select.js?version=3"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/menu.css?version=2">
+    <link rel="stylesheet" href="css/main.css?version=2">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1f6370" />
+
+</head>
+
+<body>
+    <div id="page-size-indicator"></div>
+    <div id='popup_background'>
+
+</div>
+<div id='popup_outer'>
+    <div id='popup_container'>
+        <div id='exit_popup'><img src='images/exit_button.png' style='height:27px;'></div>
+        <div id='popup_content'></div>
+        <div style='width:100%; height:1px; clear:both;'></div>
+    </div>
+    <div id='loader_container'>
+        <div id='loader_content'></div>
+        <div class='popup_loader_container'>
+            <div class='loader'></div>
+        </div>
+        <div style='width:100%; height:1px; clear:both;'></div>
+    </div>
+</div>
+
+
+    <div id='main_page' class='page active'>
+        <div id="page-wrap">
+
+            
+<header id='header_outer' style='position:fixed; z-index:50;'>
+    <div class="header-container">
+        <div class="site-logo">
+            <a href="#main_page-dashboard">
+                <img src="images/helios_logo.png">
+            </a>
+
+        </div>
+
+
+        <div class="nav-button-box">
+            <div class="nav-button table-cell align-middle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <nav>
+            <ul class="nav">
+                <li role="presentation" id='main_page-explorer-menu_item' class="nav__item active menu_root">
+                    <a href="#main_page-explorer" class='nav__link'>
+                        Explorer
+                    </a>
+                </li>
+                <li role="presentation" id='main_page-nodes-menu_item' class="nav__item menu_root">
+                    <a href="#main_page-nodes" class='nav__link'>
+                        Nodes
+                    </a>
+                </li>
+                <li role="presentation" id='main_page-top_accounts-menu_item' class="nav__item menu_root">
+                    <a href="#main_page-top_accounts" class='nav__link'>
+                        Top Accounts
+                    </a>
+                </li>
+                <!--<li role="presentation" class="nav__item menu_root has_submenu nav__item&#45;&#45;left online_menu_item">-->
+                    <!--<div  class='nav__link'>-->
+                        <!--Online wallets-->
+                    <!--</div>-->
+                     <!--<ul class="nav__dropdown" id='online_wallets_menu_list'>-->
+                        <!--<li role="presentation" id='main_page-add_online_wallet-menu_item' class="nav__item">-->
+                            <!--<a href="#main_page-add_online_wallet"  class='nav__link'>-->
+                                <!--Add wallet-->
+                            <!--</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+
+
+            <div id="main_outer">
+                <div id="main_inner">
+    <div class='tab_item active' id='main_page-explorer'>
+
+
+    <div style="padding:15px;">
+        <div class="explorer_prev_next_nav">
+
+
+            <div class='explorer_next_nav newest_blocks_nav' data-start="10">Next</div>
+            <div class='explorer_prev_nav newest_blocks_nav' data-start="0">Prev</div>
+            <div class="explorer_page_nav explorer_new_block_page_nav">0 - 10</div>
+        </div>
+        <h1>Newest blocks</h1>
+
+        <div id="new_block_list" class="explorer_page_list">
+            <h2>LOADING...</h2>
+        </div>
+    </div>
+
+    <div style="padding:15px; margin-top:20px;">
+        <div class="explorer_prev_next_nav">
+            <div class='explorer_next_nav newest_transactions_nav' data-start_block="10" data-start_tx="0" data-page="1">Next</div>
+            <div class='explorer_prev_nav newest_transactions_nav' data-start_block="0" data-start_tx="0" data-page="0">Prev</div>
+            <div class="explorer_page_nav explorer_new_tx_page_nav">0 - 10</div>
+        </div>
+        <h1>Newest Transactions</h1>
+        <div id="new_transaction_list" class="explorer_page_list">
+            <h2>LOADING...</h2>
+        </div>
+    </div>
+
+
+    
+    <div style='clear:both;'></div>
+</div>
+    <div class='tab_item active' id='main_page-block'>
+
+    <div style="padding:15px;">
+        <h1>Block Details</h1>
+
+        <div id="block_info">
+            <h2>No Block Loaded</h2>
+
+        </div>
+    </div>
+
+
+    
+    <div style='clear:both;'></div>
+</div>
+    <div class='tab_item active' id='main_page-transaction'>
+
+    <div style="padding:15px;">
+        <h1>Transaction Details</h1>
+
+        <div id="transaction_info">
+            <h2>No Block Loaded</h2>
+
+        </div>
+    </div>
+
+
+    
+    <div style='clear:both;'></div>
+</div>
+</div>
+            </div>
+
+            <!--<div class='popup_content_store' id='popup_content_confirm_transactions'>-->
+                
+            <!--</div>-->
+            <div id="footer_margin"></div>
+        </div>
+        <div id="footer">
+    <div id="footer_inner">
+        <a href="https://heliosprotocol.io">
+            <img src="images/helios_logo.png" style="height:25px;">
+        </a>
+    </div>
+</div>
+    </div>
+
+</body>
+</html>
