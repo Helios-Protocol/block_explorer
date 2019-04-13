@@ -182,7 +182,25 @@ a:hover{
 .clear_both{
     clear:both;
     width:100%;
-    height:1px;
+}
+.object_detail_section{
+    clear:both;
+    width:100%;
+    padding-top:20px;
+    word-wrap: break-word;
+    overflow:hidden;
+}
+.object_detail_section h1, .object_detail_section h2, .object_detail_section h3, .object_detail_section h4, .object_detail_section h5, .object_detail_section h6 {
+  padding-top:15px;
+}
+.object_detail_section .hash{
+    text-transform:none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.hash{
+    text-transform:none;
 }
 .line_separater{
     clear:both;
@@ -198,17 +216,19 @@ a:hover{
     background-color: #000;
 }
 h1, h2, h3, h4, h5, h6 {
-  color: #e6d46a;
+  color: #e6dda7;
   font-weight: 100;
   letter-spacing: 1px;
-  text-transform: uppercase; }
+  text-transform: uppercase;}
 
 h1 {
   font-size: 36px;
   margin-bottom: 24px;
   margin-bottom: 0;
   letter-spacing: 3px;
-  font-weight: bold; }
+  font-weight: bold;
+    color: #e6d46a;
+}
 
 h2 {
   letter-spacing: 1px;
@@ -216,9 +236,16 @@ h2 {
   color: #e6dda7; }
 .explorer_page_list{
     margin-top:20px;
+    clear:both;
     /*text-overflow: ellipsis;*/
     /*white-space: nowrap;*/
     /*overflow: hidden;*/
+}
+h4{
+    font-size:15px;
+    font-style:italic;
+    color:#e6dda7;
+    font-weight:300;
 }
 .block_list_details{
     float:left;
@@ -241,7 +268,8 @@ h2 {
     font-weight:200;
 }
 .explorer_page_list .item{
-    margin-bottom:15px;
+    padding-top:15px;
+    clear:both;
 }
 .explorer_prev_next_nav{
     position:absolute;
@@ -249,6 +277,7 @@ h2 {
     top:25px;
     width:300px;
     font-size:16px;
+    padding-top:0px;
 }
 .explorer_prev_next_nav div{
     font-weight:400;
@@ -277,8 +306,45 @@ h2 {
     .frontpage_block{
         left:10%;
     }
+    .explorer_prev_next_nav{
+        position:relative;
+        right:auto;
+        left:auto;
+        top:auto;
+        width:300px;
+        font-size:16px;
+        float:right;
+        padding-top:10px;
+    }
 }
 
+
+.object_detail .object_detail_label{
+    float:left;
+    width:200px;
+    margin-right:20px;
+    font-size:15px;
+}
+.object_detail .object_detail_description{
+    float:left;
+    width:600px;
+    font-weight:300;
+    font-size:14px;
+    margin-top:2px;
+    word-wrap: break-word;
+    overflow:hidden;
+}
+.object_detail_description a{
+    color:#e6d46a;
+    font-weight:300;
+}
+
+@media (max-width: 600px) {
+    .object_detail .object_detail_description{
+
+        width:100%;
+    }
+}
 
 .frontpage_block_background{
     position:absolute;

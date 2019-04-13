@@ -81,7 +81,9 @@ $( document ).ready(function() {
     });
 
 
-
+    $('body').on('click', 'a', function(e){
+        $( "html" ).scrollTop( 0 );
+    })
 
 
 });

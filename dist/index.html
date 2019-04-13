@@ -12,15 +12,16 @@
     <script src="js/visual.js?version=3"></script>
     <script src="js/main.js?version=3"></script>
     <script src="js/menu.js?version=3"></script>
+    <script src="js/nodes.js?version=3"></script>
     <script src="js/custom_select.js?version=3"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/menu.css?version=2">
-    <link rel="stylesheet" href="css/main.css?version=2">
+    <link rel="stylesheet" href="css/menu.css?version=3">
+    <link rel="stylesheet" href="css/main.css?version=3">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#1f6370" />
+    <meta name="theme-color" content="#000" />
 
 </head>
 
@@ -79,11 +80,11 @@
                         Nodes
                     </a>
                 </li>
-                <li role="presentation" id='main_page-top_accounts-menu_item' class="nav__item menu_root">
-                    <a href="#main_page-top_accounts" class='nav__link'>
-                        Top Accounts
-                    </a>
-                </li>
+                <!--<li role="presentation" id='main_page-top_accounts-menu_item' class="nav__item menu_root">-->
+                    <!--<a href="#main_page-top_accounts" class='nav__link'>-->
+                        <!--Top Accounts-->
+                    <!--</a>-->
+                <!--</li>-->
                 <!--<li role="presentation" class="nav__item menu_root has_submenu nav__item&#45;&#45;left online_menu_item">-->
                     <!--<div  class='nav__link'>-->
                         <!--Online wallets-->
@@ -110,6 +111,7 @@
 
 
     <div style="padding:15px;">
+        <h1>Newest blocks</h1>
         <div class="explorer_prev_next_nav">
 
 
@@ -117,7 +119,7 @@
             <div class='explorer_prev_nav newest_blocks_nav' data-start="0">Prev</div>
             <div class="explorer_page_nav explorer_new_block_page_nav">0 - 10</div>
         </div>
-        <h1>Newest blocks</h1>
+
 
         <div id="new_block_list" class="explorer_page_list">
             <h2>LOADING...</h2>
@@ -125,12 +127,12 @@
     </div>
 
     <div style="padding:15px; margin-top:20px;">
+        <h1>Newest Transactions</h1>
         <div class="explorer_prev_next_nav">
             <div class='explorer_next_nav newest_transactions_nav' data-start_block="10" data-start_tx="0" data-page="1">Next</div>
             <div class='explorer_prev_nav newest_transactions_nav' data-start_block="0" data-start_tx="0" data-page="0">Prev</div>
             <div class="explorer_page_nav explorer_new_tx_page_nav">0 - 10</div>
         </div>
-        <h1>Newest Transactions</h1>
         <div id="new_transaction_list" class="explorer_page_list">
             <h2>LOADING...</h2>
         </div>
@@ -142,12 +144,35 @@
 </div>
     <div class='tab_item active' id='main_page-block'>
 
-    <div style="padding:15px;">
+    <div class='object_detail' style="padding:15px;">
         <h1>Block Details</h1>
+        <div class="object_detail_section">
+            <h2>Block Header</h2>
+            <div id="block_header_details">
+                <h3>Loading...</h3>
 
-        <div id="block_info">
-            <h2>No Block Loaded</h2>
+            </div>
+        </div>
+        <div class="object_detail_section">
+            <h2>Block Send Transactions</h2>
+            <div id="block_send_transactions_details">
+                <h3>Loading...</h3>
 
+            </div>
+        </div>
+        <div class="object_detail_section">
+            <h2>Block Receive Transactions</h2>
+            <div id="block_receive_transactions_details">
+                <h3>Loading...</h3>
+
+            </div>
+        </div>
+        <div class="object_detail_section">
+            <h2>Block Staking Rewards</h2>
+            <div id="block_reward_bundle_details">
+                <h3>Loading...</h3>
+
+            </div>
         </div>
     </div>
 
@@ -157,12 +182,32 @@
 </div>
     <div class='tab_item active' id='main_page-transaction'>
 
-    <div style="padding:15px;">
-        <h1>Transaction Details</h1>
+    <div class='object_detail' style="padding:15px;">
+        <div class="object_detail_section">
+            <h1>Transaction Details</h1>
 
-        <div id="transaction_info">
-            <h2>No Block Loaded</h2>
+            <div id="transaction_info">
+                <h2>Loading...</h2>
 
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div style='clear:both;'></div>
+</div>
+    <div class='tab_item active' id='main_page-nodes'>
+
+    <div class='object_detail' style="padding:15px;">
+        <div>
+            <h1>Nodes</h1>
+            <h5>Nodes that are currently connected to this node</h5>
+
+            <div id="node_info" class="explorer_page_list">
+                <h2>Loading...</h2>
+
+            </div>
         </div>
     </div>
 

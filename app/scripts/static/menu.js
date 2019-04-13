@@ -106,15 +106,34 @@ function goToHashFromURL()
 	var hash = window.location.hash;
 	//console.log(hash);
 	if(hash != undefined){
-	    if(hash == "" || hash == "#"){
-	        //default tabs
+	    if(hash == "" || hash == "#" || hash == '#main_page-explorer'){
+	        // explorer page
 	        switchToTab('main_page-explorer');
+	        populateNewestBlocks();
+            populateNewestTransactions();
         }else {
-            var name = hash.substring(1);
-            switchToTab(name);
+
+            var hash = hash.substring(1);
+            var parts = hash.split('&');
+            var pageName = parts[0];
+
+            switchToTab(pageName);
+            if(parts.length > 1){
+                if(pageName.indexOf('block') !== -1){
+                    var blockHash = parts[1];
+                    populateBlockDetails(blockHash);
+                }
+                if(pageName.indexOf('transaction') !== -1){
+                    var blockHash = parts[1];
+                    populateTransactionDetails(blockHash);
+                }
+            }
+
+            if(pageName.indexOf('nodes') !== -1){
+                populateConnectedNodesDetails();
+            }
         }
     }
-
 }
 
 function switchToTab(name){
@@ -133,9 +152,6 @@ function switchToTab(name){
     var tab_item_id = "#" + name;
     if ($(tab_item_id).length > 0) {
         $(tab_item_id).addClass('active');
-    }
-    if (name == 'historical_gas_price') {
-        populateHistoricalMinGasPricePlot()
     }
 
 }
