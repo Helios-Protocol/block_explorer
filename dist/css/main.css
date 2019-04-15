@@ -454,6 +454,30 @@ table{
 }
 
 
+
+/*DYNAGRAPH*/
+.dygraph-axis-label.dygraph-axis-label-y{
+    color:#fff;
+}
+.dygraph-axis-label.dygraph-axis-label-x{
+    color:#fff;
+}
+.dygraph-legend{
+    background:none;
+    width:360px;
+}
+.dygraph-legend span{
+    float:right;
+}
+
+/*HISTORICAL MIN GAS PRICE*/
+
+#historical_min_gas_plot{
+    width:100%;
+    height:500px;
+}
+
+
 /*Inputs*/
 @keyframes onAutoFillStart {  from {/**/}  to {/**/}}
 input:-webkit-autofill {
@@ -752,14 +776,6 @@ td{
     word-break: break-word;
 }
 
-
-
-/*HISTORICAL MIN GAS PRICE*/
-
-#historical_min_gas_plot_div{
-    width:100%;
-    height:500px;
-}
 
 
 .tx_history_row{

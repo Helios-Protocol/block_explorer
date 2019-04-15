@@ -132,6 +132,10 @@ function goToHashFromURL()
             if(pageName.indexOf('nodes') !== -1){
                 populateConnectedNodesDetails();
             }
+
+            if(pageName.indexOf('historical_gas_price') !== -1){
+                populateHistoricalGasPrice();
+            }
         }
     }
 }
