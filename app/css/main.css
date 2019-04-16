@@ -52,7 +52,7 @@ div{
     width:100%;
     background-color:#000;
     /*background-color:#171717;*/
-    height:80px;
+    height:90px;
     color: #fff;
 }
 
@@ -72,22 +72,25 @@ div{
     color:#fff;
     letter-spacing:10px;
 }
-@media (min-width: 1060px) {
-    #wallet_test_version_container_frontpage{
-        left:auto;
-        right:40px;
-        top:30px;
-    }
-}
 #main_outer{
     width:100%;
     position:relative;
-    padding-top:100px;
+    padding-top:110px;
 }
 #main_inner{
     width:100%;
     margin-left:auto;
     margin-right:auto;
+}
+.normal_copy{
+    font-size:15px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    line-height: 18px;
+    color: #d4d4d4;
+}
+.page_inner_margin{
+    padding:15px;
 }
 a{
     color:#fff;
@@ -186,7 +189,7 @@ a:hover{
 .object_detail_section{
     clear:both;
     width:100%;
-    padding-top:20px;
+    padding-bottom:40px;
     word-wrap: break-word;
     overflow:hidden;
 }
@@ -272,6 +275,14 @@ h4{
     clear:both;
 }
 .explorer_prev_next_nav{
+    position:absolute;
+    right:0px;
+    top:15px;
+    width:300px;
+    font-size:16px;
+    padding-top:0px;
+}
+.explorer_prev_next_nav.padded_container{
     position:absolute;
     right:0px;
     top:25px;
@@ -466,16 +477,17 @@ table{
     background:none;
     width:360px;
 }
-.dygraph-legend span{
-    float:right;
-}
 
 /*HISTORICAL MIN GAS PRICE*/
-
-#historical_min_gas_plot{
+.plot_container{
+    clear:both;
+    padding-top:15px;
+}
+.plot_full_width{
     width:100%;
     height:500px;
 }
+
 
 
 /*Inputs*/
@@ -489,6 +501,37 @@ input:-webkit-autofill {
     /*transition: background-color 50000s ease-in-out 0s;*/
 }
 
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    background: #e6d46a;
+    color: black;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    height:25px;
+    padding-left: 13px;
+    padding-right: 6px;
+    padding-top:10px;
+    vertical-align: middle;
+}
+input.search_box{
+    padding-top:3px;
+    height:35px;
+    background-color: #f0f0f0;
+    color: #222;
+}
+.search_box::placeholder{
+    color:#aaa;
+}
+input.search_box.filled {
+    color: #222;
+}
+input.search_box:focus{
+    background-color:#f0f0f0;
+    color:#222;
+}
 input, textarea{
     padding-top:14px;
 }

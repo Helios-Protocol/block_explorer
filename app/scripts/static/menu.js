@@ -14,8 +14,8 @@ function getPageSize(){
     return -1;
 }
 
-var headerHeightMobile = 80;
-var headerHeightDesktop = 80;
+var headerHeightMobile = 90;
+var headerHeightDesktop = 90;
 var currentPageSize = 0;
 
 $(document).ready(function(){
@@ -33,6 +33,7 @@ $(document).ready(function(){
             $('.nav').show();
             // $('nav').show();
             $('html').addClass('no-doc-overflow');
+            $('.nav_search_box_container').hide();
         }
         else {
             $('header').animate({height: headerHeightMobile}, 400);
@@ -40,7 +41,7 @@ $(document).ready(function(){
                 // $('nav').hide();
             });
             $('html').removeClass('no-doc-overflow');
-
+            $('.nav_search_box_container').show();
         }
     });
 
@@ -72,6 +73,7 @@ function closeMenu(){
     $('.header-container').animate({height: headerHeightMobile}, 400, function(){
         // $('nav').hide();
     });
+    $('.nav_search_box_container').show();
     $('html').removeClass('no-doc-overflow');
 }
 $(window).on('load', function(){
@@ -87,6 +89,7 @@ $(window).on('resize', function(){
           $('.nav__dropdown').css('display', '');
           $('html').removeClass('no-doc-overflow');
           currentPageSize = 3;
+          $('.nav_search_box_container').show();
         }
     }
     else {
@@ -127,14 +130,24 @@ function goToHashFromURL()
                     var blockHash = parts[1];
                     populateTransactionDetails(blockHash);
                 }
+                if(pageName.indexOf('address') !== -1){
+                    var walletAddress = parts[1];
+                    $('#current_wallet_address').val(walletAddress);
+                    populateAddressDetails(walletAddress);
+                    populateNewestBlocksForAddress(0, walletAddress);
+                }
+
+
             }
 
             if(pageName.indexOf('nodes') !== -1){
                 populateConnectedNodesDetails();
             }
 
-            if(pageName.indexOf('historical_gas_price') !== -1){
+            if(pageName.indexOf('network_stats') !== -1){
                 populateHistoricalGasPrice();
+                populateHistoricalNetworkTPHCapability();
+                populateHistoricalTPH();
             }
         }
     }

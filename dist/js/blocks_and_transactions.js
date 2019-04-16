@@ -11,8 +11,8 @@ function populateBlockDetails(hash) {
         $('#block_header_details').append("<div class='clear_both'></div><div class='object_detail_label'>Block hash</div><div class='object_detail_description'>" + block.hash + "</div></div>");
         $('#block_header_details').append("<div class='clear_both'><div class='object_detail_label'>Block number</div><div class='object_detail_description'>" + block.number + "</div></div>");
         $('#block_header_details').append("<div class='clear_both'><div class='object_detail_label'>Timestamp</div><div class='object_detail_description'>" + block.timestamp + "</div></div>");
-        $('#block_header_details').append("<div class='clear_both'></div><div class='object_detail_label'>Chain address</div><div class='object_detail_description'>" + block.chainAddress + "</div></div>");
-        $('#block_header_details').append("<div class='clear_both'><div class='object_detail_label'>Signed by</div><div class='object_detail_description'>" + block.sender + "</div></div>");
+        $('#block_header_details').append("<div class='clear_both'></div><div class='object_detail_label'>Chain address</div><div class='object_detail_description'><a href='#main_page-address&"+block.chainAddress+"'>" + block.chainAddress + "</a></div></div>");
+        $('#block_header_details').append("<div class='clear_both'><div class='object_detail_label'>Signed by</div><div class='object_detail_description'><a href='#main_page-address&"+block.sender+"'>" + block.sender + "</a></div></div>");
         $('#block_header_details').append("<div class='clear_both'><div class='object_detail_label'>Account hash</div><div class='object_detail_description'>" + block.accountHash + "</div></div>");
         $('#block_header_details').append("<div class='clear_both'><div class='object_detail_label'>Account balance</div><div class='object_detail_description'>" + web3.utils.fromWei(block.accountBalance) + "</div></div>");
         $('#block_header_details').append("<div class='clear_both'><div class='object_detail_label'>Gas used (Gwei)</div><div class='object_detail_description'>" + block.gasUsed + "</div></div>");
@@ -79,8 +79,8 @@ function populateBlockDetails(hash) {
                 var proof = rewardBundle.rewardType2.proof [i];
                 var html = "<div class='clear_both'>" +
                             "<h4>Proof #" + i + "</h4>" +
-                            "<div class='clear_both'><div class='object_detail_label'>Sender wallet address</div><div class='object_detail_description'>" + proof.sender + "</div></div>" +
-                            "<div class='clear_both'><div class='object_detail_label'>Recipient wallet address</div><div class='object_detail_description'>" + proof.recipientNodeWalletAddress + "</div></div>" +
+                            "<div class='clear_both'><div class='object_detail_label'>Sender wallet address</div><div class='object_detail_description'><a href='#main_page-address&"+proof.sender+"'>" + proof.sender + "</a></div></div>" +
+                            "<div class='clear_both'><div class='object_detail_label'>Recipient wallet address</div><div class='object_detail_description'><a href='#main_page-address&"+proof.recipientNodeWalletAddress+"'>" + proof.recipientNodeWalletAddress + "</a></div></div>" +
                             "<div class='clear_both'><div class='object_detail_label'>Score (max 100,000)</div><div class='object_detail_description'>" + proof.score + "</div></div>" +
                             "<div class='clear_both'><div class='object_detail_label'>Timestamp</div><div class='object_detail_description'>" + proof.timestamp + "</div></div>" +
                             "<div class='clear_both'><div class='object_detail_label'>Previous reward block #</div><div class='object_detail_description'>" + proof.sinceBlockNumber + "</div></div>" +
@@ -102,8 +102,8 @@ function getDetailHtmlForSendTx(sendTx){
                 "<a href='#main_page-transaction&"+sendTx['hash']+"'><h3 class='hash'>Tx "+sendTx['transactionIndex']+" with hash " + sendTx['hash'] + "</h3></a>" +
                 "<div class='clear_both'><div class='object_detail_label'>Transaction index</div><div class='object_detail_description'>" + sendTx.transactionIndex + "</div></div>" +
                 "<div class='clear_both'><div class='object_detail_label'>Block hash</div><div class='object_detail_description'><a href='#main_page-block&"+sendTx['blockHash']+"'>"+sendTx['blockHash']+" </a></div></div>" +
-                "<div class='clear_both'><div class='object_detail_label'>From</div><div class='object_detail_description'>" + sendTx.from + "</div></div>" +
-                "<div class='clear_both'><div class='object_detail_label'>To</div><div class='object_detail_description'>" + sendTx.to + "</div></div>" +
+                "<div class='clear_both'><div class='object_detail_label'>From</div><div class='object_detail_description'><a href='#main_page-address&"+sendTx.from+"'>" + sendTx.from + "</a></div></div>" +
+                "<div class='clear_both'><div class='object_detail_label'>To</div><div class='object_detail_description'><a href='#main_page-address&"+sendTx.to+"'>" + sendTx.to + "</a></div></div>" +
                 "<div class='clear_both'><div class='object_detail_label'>Amount (HLS)</div><div class='object_detail_description'>" + web3.utils.fromWei(sendTx.value) + "</div></div>" +
                 "<div class='clear_both'><div class='object_detail_label'>Max gas (Gwei)</div><div class='object_detail_description'>" + sendTx.gas + "</div></div>" +
                 "<div class='clear_both'><div class='object_detail_label'>Gas used</div><div class='object_detail_description'>" + sendTx.gasUsed + "</div></div>" +
@@ -118,8 +118,8 @@ function getDetailHtmlForReceiveTx(tx) {
     var html = "<div class='clear_both'>" +
                 "<a href='#main_page-transaction&" + tx['hash'] + "'><h3 class='hash'>Tx " + tx['transactionIndex'] + " with hash " + tx['hash'] + "</h3></a>" +
                 "<div class='clear_both'><div class='object_detail_label'>Block hash</div><div class='object_detail_description'><a href='#main_page-block&"+tx['blockHash']+"'>"+tx['blockHash']+"</a></div></div>" +
-                "<div class='clear_both'><div class='object_detail_label'>From</div><div class='object_detail_description'>" + tx.from + "</div></div>" +
-                "<div class='clear_both'><div class='object_detail_label'>To</div><div class='object_detail_description'>" + tx.transactionIndex + "</div></div>" +
+                "<div class='clear_both'><div class='object_detail_label'>From</div><div class='object_detail_description'><a href='#main_page-address&"+tx.from+"'>" + tx.from + "</a></div></div>" +
+                "<div class='clear_both'><div class='object_detail_label'>To</div><div class='object_detail_description'><a href='#main_page-address&"+tx.to+"'>" + tx.to + "</a></div></div>" +
                 "<div class='clear_both'><div class='object_detail_label'>Amount (HLS)</div><div class='object_detail_description'>" + web3.utils.fromWei(tx.value) + "</div></div>" +
                 "<div class='clear_both'><div class='object_detail_label'>Send tx hash</div><div class='object_detail_description'><a href='#main_page-transaction&" + tx['sendTransactionHash'] + "'>" + tx.sendTransactionHash + "</a></div></div>" +
                 "<div class='clear_both'><div class='object_detail_label'>Is it a refund?</div><div class='object_detail_description'>" + tx.isRefund + "</div></div>" +
@@ -201,6 +201,67 @@ function populateNewestBlocks(start) {
 }
 
 
+function populateNewestBlocksForAddress(start, address) {
+    console.log("populating newest blocks for address")
+    if(start === undefined){
+        start=0;
+    }
+    if(address !== undefined) {
+        if (connectionMaintainer.isConnected()) {
+            web3.hls.getNewestBlocks(newBlockListLength, start, undefined, address, true)
+            .then(function (blockList) {
+                console.log(blockList);
+                if(blockList.length == 0 || blockList[0] === undefined){
+                    $('#new_blocks_for_address_list').html("<h2>NO BLOCKS ON THIS CHAIN...</h2>");
+                    return;
+                }
+                $('#new_blocks_for_address_list').html('');
+                for(var i=0; i<blockList.length; i++){
+                    var block = blockList[i];
+                    blockCache[block['hash']] = block;
+                    var numberOfTransactions = block.transactions.length + block.receiveTransactions.length;
+                    var type1RewardAmount = (block.rewardBundle.rewardType1 !== undefined && block.rewardBundle.rewardType1.amount !== undefined) ? block.rewardBundle.rewardType1.amount : 0;
+                    var type2RewardAmount = (block.rewardBundle.rewardType2 !== undefined && block.rewardBundle.rewardType2.amount !== undefined) ? block.rewardBundle.rewardType2.amount : 0;
+                    var stakeReward = web3.utils.toBN(type1RewardAmount).add(web3.utils.toBN(type2RewardAmount));
+
+                    if (!stakeReward.eq(web3.utils.toBN(0))) {
+                        numberOfTransactions++;
+                    }
+                    stakeReward = web3.utils.fromWei(stakeReward);
+                    var d = new Date();
+                    var now = Math.round(d.getTime() / 1000);
+                    var timeSinceBlock = now - block['timestamp']
+
+                    var block_html = "<div class='item'>\n" +
+                        "                    <a href='#main_page-block&" + block['hash'] + "'class='view_block'><h2>Block " + block['number'] + " : " + block['hash'] + "</h2></a>\n" +
+                        "                    <div class='block_list_details'><h4>On Chain: " + block['chainAddress'] + ",&nbsp;</h4></div><div class='block_list_details'><h4>Number of Transactions: " + numberOfTransactions + ",&nbsp;</h4></div><div class='block_list_details'><h4>Staking reward: " + stakeReward + " </h4></div>\n" +
+                        "                    <div class='clear_both'><h4>" + timeSinceBlock + " seconds ago</h4></div>\n" +
+                        "                </div>";
+                    $('#new_blocks_for_address_list').append(block_html);
+                    if (start <= 0) {
+                        $('.newest_blocks_for_address_nav.explorer_prev_nav').hide();
+                    } else {
+                        $('.newest_blocks_for_address_nav.explorer_prev_nav').show();
+                    }
+                    if ((start - newBlockListLength) < 0) {
+                        var prev = 0;
+                    } else {
+                        var prev = start - newBlockListLength;
+                    }
+
+                    var next = start + newBlockListLength;
+                    $('.newest_blocks_for_address_nav.explorer_prev_nav').data('start', prev);
+                    $('.newest_blocks_for_address_nav.explorer_next_nav').data('start', next);
+                    $('.explorer_new_block_for_address_page_nav').html(start + " - " + next);
+                }
+            })
+            .catch(function (error) {
+                popup(error);
+            })
+        }
+    }
+}
+
 async function getNewestTransactions(startBlock, startTxIndex, blockLimit, txLimit){
     return await web3.hls.getNewestBlocks(blockLimit, startBlock, undefined, undefined, true)
     .then(function (blockList) {
@@ -212,7 +273,7 @@ async function getNewestTransactions(startBlock, startTxIndex, blockLimit, txLim
         var blockCount = 0;
         for(var i = 0; i < blockList.length; i ++){
             var block = blockList[i];
-            transactionCache[block['hash']] = block;
+            blockCache[block['hash']] = block;
 
             var txIndex = 0;
             var d = new Date();

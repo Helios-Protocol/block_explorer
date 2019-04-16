@@ -15,7 +15,7 @@
     }
 }
 
-@media (min-width: 1060px) {
+@media (min-width: 750px) {
     #page-size-indicator {
     width: 3px;
     }
@@ -26,12 +26,12 @@ header {
   border-bottom-width: 4px;
 }
 
-@media (min-width: 1060px) {
-  header {
-    height: 108px;
-    transition: height .25s ease;
-  }
-}
+/*@media (min-width: 750px) {*/
+  /*header {*/
+    /*height: 108px;*/
+    /*transition: height .25s ease;*/
+  /*}*/
+/*}*/
 
 .site-logo {
   height: 80px;
@@ -39,7 +39,7 @@ header {
 
 .site-logo img {
   position:relative;
-  top: 27px;
+  top: 12px;
   left:40px;
   height: 25px;
 }
@@ -50,7 +50,32 @@ header {
   overflow: hidden;
 }
 
-@media (min-width: 1060px) {
+.nav_search_box_container{
+    box-sizing:border-box;
+    position:absolute;
+    top:50px;
+    width:100%;
+    padding-right:35px;
+    padding-left:35px;
+    height:30px;
+}
+.nav_search_box_container_inner{
+    width:100%;
+}
+
+.search_box{
+    box-sizing:border-box;
+    width:100%;
+    padding-right:60px;
+
+}
+.search_button{
+    position:absolute;
+    top:0px;
+    right:0px;
+}
+
+@media (min-width: 750px) {
   .header-container {
     display: flex;
     align-items: center;
@@ -58,12 +83,23 @@ header {
     width: 100%;
     height: 100%;
   }
+    .site-logo img {
+         top: 27px;
+    }
+
+   .nav_search_box_container{
+        position:absolute;
+        top:5px;
+        right:0px;
+        width:450px;
+        height:30px;
+    }
 }
 
 .nav-button-box{
     position:absolute;
-    right:20px;
-    top:20px;
+    right:28px;
+    top:6px;
 }
 
 .nav-button span {
@@ -85,14 +121,19 @@ header {
   display: none;
 }
 
-@media (min-width: 1060px) {
+@media (min-width: 750px) {
+    nav{
+        position:relative;
+        top:20px;
+    }
   .nav {
     display: block;
     height: 100%;
     margin-right: 22px;
+
   }
 }
-@media (min-width: 1060px) {
+@media (min-width: 750px) {
   .nav-button {
     display: none;
   }
@@ -119,7 +160,7 @@ nav{
   margin: 0px 0px 0px 0px;
 }
 
-@media (min-width: 1060px) {
+@media (min-width: 750px) {
   .nav__item {
     display: inline-block;
   }
@@ -145,7 +186,7 @@ nav{
   }
 }
 
-@media (min-width: 1060px) {
+@media (min-width: 750px) {
   .nav__item--left {
     position: relative;
   }
@@ -178,7 +219,7 @@ nav{
   color: #222;
 }
 
-@media (min-width: 1060px) {
+@media (min-width: 750px) {
   .nav__link {
     text-align: left;
     font-size: 13px;
@@ -212,7 +253,7 @@ nav{
   color: #222;
 }
 
-@media (min-width: 1060px) {
+@media (min-width: 750px) {
   .header-container{
     overflow: visible;
   }
@@ -258,7 +299,7 @@ nav{
 
 }
 
-@media (min-width: 1060px) {
+@media (min-width: 750px) {
   .wallet_menu_item > .switch_wallet_link{
       width:59px;
       position:absolute;
@@ -279,7 +320,7 @@ nav{
 .menu_image_img {
     padding-top:10px;
   }
-@media (min-width: 1060px) {
+@media (min-width: 750px) {
   .menu_image {
     padding-top:5px;
     padding-bottom:1px;
@@ -288,3 +329,5 @@ nav{
     padding-top:0px;
   }
 }
+
+
