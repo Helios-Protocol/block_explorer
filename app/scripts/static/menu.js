@@ -141,7 +141,11 @@ function goToHashFromURL()
             }
 
             if(pageName.indexOf('nodes') !== -1){
-                populateConnectedNodesDetails();
+                populateConnectedNodesDetails()
+                .then(function(){
+                    populateLocationCharts();
+                });
+
             }
 
             if(pageName.indexOf('network_stats') !== -1){

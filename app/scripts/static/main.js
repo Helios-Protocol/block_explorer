@@ -2,7 +2,7 @@ var blockCache = {};
 var transactionCache = {};
 var newBlockListLength = 10;
 var newestTransactionsPageIdx = {}
-
+var nodeCache = [];
 
 $( document ).ready(function() {
 
@@ -49,6 +49,7 @@ $( document ).ready(function() {
     });
 
     $('body').on('submit', '#search_form', function(e) {
+        e.preventDefault();
         var searchString = $('#explorer_search_input').val();
         doSearch(searchString)
     });

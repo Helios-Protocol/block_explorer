@@ -4,6 +4,7 @@ var helios_web3 = web3_main.web3;
 var fileSaver = require("file-saver");
 var ConnectionMaintainer = require("./node_connection_helpers.js").ConnectionMaintainer;
 var getNodeMessageFromError = require("./node_connection_helpers.js").getNodeMessageFromError;
+// var echarts = require('echarts');
 
 // var availableNodes = [
 //     "ws://127.0.0.1:30304",
@@ -36,6 +37,9 @@ if (typeof window !== 'undefined') {
     if (typeof window.getNodeMessageFromError === 'undefined'){
         window.getNodeMessageFromError = getNodeMessageFromError;
     }
+    // if (typeof window.echarts === 'undefined'){
+    //     window.echarts = echarts;
+    // }
 }
 
 
@@ -44,6 +48,7 @@ module.exports = {
     helios_web3: helios_web3,
     connectionMaintainer:connectionMaintainer,
     getNodeMessageFromError:getNodeMessageFromError
+    // echarts: echarts
 };
 
 },{"./node_connection_helpers.js":2,"./web3.js":3,"file-saver":92}],2:[function(require,module,exports){
@@ -15864,30 +15869,35 @@ utils.intFromLE = intFromLE;
 
 },{"bn.js":23,"minimalistic-assert":114,"minimalistic-crypto-utils":115}],89:[function(require,module,exports){
 module.exports={
-  "_from": "elliptic@^6.0.0",
+  "_args": [
+    [
+      "elliptic@6.4.1",
+      "F:\\Google Drive\\forex\\blockchain_coding\\Helios\\prototype_desktop_windows\\block_explorer"
+    ]
+  ],
+  "_from": "elliptic@6.4.1",
   "_id": "elliptic@6.4.1",
   "_inBundle": false,
   "_integrity": "sha512-BsXLz5sqX8OHcsh7CqBMztyXARmGQ3LWPtGjJi6DiJHq5C/qvi9P3OqgswKSDftbu8+IoI/QDTAm2fFnQ9SZSQ==",
   "_location": "/elliptic",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "version",
     "registry": true,
-    "raw": "elliptic@^6.0.0",
+    "raw": "elliptic@6.4.1",
     "name": "elliptic",
     "escapedName": "elliptic",
-    "rawSpec": "^6.0.0",
+    "rawSpec": "6.4.1",
     "saveSpec": null,
-    "fetchSpec": "^6.0.0"
+    "fetchSpec": "6.4.1"
   },
   "_requiredBy": [
     "/browserify-sign",
     "/create-ecdh"
   ],
   "_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.4.1.tgz",
-  "_shasum": "c2d0b7776911b86722c632c3c06c60f2f819939a",
-  "_spec": "elliptic@^6.0.0",
-  "_where": "/d:/Google Drive/forex/blockchain_coding/Helios/prototype_laptop/helios-wallet/node_modules/browserify-sign",
+  "_spec": "6.4.1",
+  "_where": "F:\\Google Drive\\forex\\blockchain_coding\\Helios\\prototype_desktop_windows\\block_explorer",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -15895,7 +15905,6 @@ module.exports={
   "bugs": {
     "url": "https://github.com/indutny/elliptic/issues"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "bn.js": "^4.4.0",
     "brorand": "^1.0.1",
@@ -15905,7 +15914,6 @@ module.exports={
     "minimalistic-assert": "^1.0.0",
     "minimalistic-crypto-utils": "^1.0.0"
   },
-  "deprecated": false,
   "description": "EC cryptography",
   "devDependencies": {
     "brfs": "^1.4.3",
@@ -28853,7 +28861,7 @@ module.exports={
   "_args": [
     [
       "elliptic@6.4.1",
-      "/d:/Google Drive/forex/blockchain_coding/Helios/prototype_laptop/helios-web3"
+      "D:\\Google Drive\\forex\\blockchain_coding\\Helios\\prototype desktop\\helios-web3.js"
     ]
   ],
   "_from": "elliptic@6.4.1",
@@ -28882,7 +28890,7 @@ module.exports={
   ],
   "_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.4.1.tgz",
   "_spec": "6.4.1",
-  "_where": "/d:/Google Drive/forex/blockchain_coding/Helios/prototype_laptop/helios-web3",
+  "_where": "D:\\Google Drive\\forex\\blockchain_coding\\Helios\\prototype desktop\\helios-web3.js",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -63033,7 +63041,7 @@ HttpProvider.prototype.disconnect = function () {
 
 module.exports = HttpProvider;
 
-},{"http":166,"https":107,"web3-core-helpers":470,"xhr2-cookies":529}],508:[function(require,module,exports){
+},{"http":166,"https":107,"web3-core-helpers":470,"xhr2-cookies":528}],508:[function(require,module,exports){
 arguments[4][465][0].apply(exports,arguments)
 },{"dup":465}],509:[function(require,module,exports){
 /*
@@ -63403,30 +63411,28 @@ module.exports = require('../package.json').version;
 
 },{"../package.json":513}],513:[function(require,module,exports){
 module.exports={
-  "_args": [
-    [
-      "git://github.com/frozeman/WebSocket-Node.git#6c72925e3f8aaaea8dc8450f97627e85263999f2",
-      "/d:/Google Drive/forex/blockchain_coding/Helios/prototype_laptop/helios-web3"
-    ]
-  ],
   "_from": "git://github.com/frozeman/WebSocket-Node.git#6c72925e3f8aaaea8dc8450f97627e85263999f2",
-  "_id": "websocket@git://github.com/frozeman/WebSocket-Node.git#6c72925e3f8aaaea8dc8450f97627e85263999f2",
+  "_id": "websocket@1.0.26",
   "_inBundle": false,
   "_integrity": "",
   "_location": "/web3-providers-ws/websocket",
   "_phantomChildren": {},
   "_requested": {
     "type": "git",
-    "raw": "git://github.com/frozeman/WebSocket-Node.git#6c72925e3f8aaaea8dc8450f97627e85263999f2",
+    "raw": "websocket@git://github.com/frozeman/WebSocket-Node.git#6c72925e3f8aaaea8dc8450f97627e85263999f2",
+    "name": "websocket",
+    "escapedName": "websocket",
     "rawSpec": "git://github.com/frozeman/WebSocket-Node.git#6c72925e3f8aaaea8dc8450f97627e85263999f2",
     "saveSpec": "git://github.com/frozeman/WebSocket-Node.git#6c72925e3f8aaaea8dc8450f97627e85263999f2",
     "fetchSpec": "git://github.com/frozeman/WebSocket-Node.git",
     "gitCommittish": "6c72925e3f8aaaea8dc8450f97627e85263999f2"
   },
-  "_requiredBy": [],
+  "_requiredBy": [
+    "/web3-providers-ws"
+  ],
   "_resolved": "git://github.com/frozeman/WebSocket-Node.git#6c72925e3f8aaaea8dc8450f97627e85263999f2",
-  "_spec": "git://github.com/frozeman/WebSocket-Node.git#6c72925e3f8aaaea8dc8450f97627e85263999f2",
-  "_where": "/d:/Google Drive/forex/blockchain_coding/Helios/prototype_laptop/helios-web3",
+  "_spec": "websocket@git://github.com/frozeman/WebSocket-Node.git#6c72925e3f8aaaea8dc8450f97627e85263999f2",
+  "_where": "D:\\Google Drive\\forex\\blockchain_coding\\Helios\\prototype desktop\\helios-web3.js\\node_modules\\web3-providers-ws",
   "author": {
     "name": "Brian McKelvey",
     "email": "brian@worlize.com",
@@ -63436,6 +63442,7 @@ module.exports={
   "bugs": {
     "url": "https://github.com/theturtle32/WebSocket-Node/issues"
   },
+  "bundleDependencies": false,
   "config": {
     "verbose": false
   },
@@ -63452,6 +63459,7 @@ module.exports={
     "typedarray-to-buffer": "^3.1.2",
     "yaeti": "^0.0.6"
   },
+  "deprecated": false,
   "description": "Websocket Client & Server Library implementing the WebSocket protocol as specified in RFC 6455.",
   "devDependencies": {
     "buffer-equal": "^1.0.0",
@@ -65325,256 +65333,7 @@ function xhrRequest (opt, cb) {
   return req
 }
 
-},{"./normalize-response":525,"xhr":527}],527:[function(require,module,exports){
-"use strict";
-var window = require("global/window")
-var isFunction = require("is-function")
-var parseHeaders = require("parse-headers")
-var xtend = require("xtend")
-
-module.exports = createXHR
-// Allow use of default import syntax in TypeScript
-module.exports.default = createXHR;
-createXHR.XMLHttpRequest = window.XMLHttpRequest || noop
-createXHR.XDomainRequest = "withCredentials" in (new createXHR.XMLHttpRequest()) ? createXHR.XMLHttpRequest : window.XDomainRequest
-
-forEachArray(["get", "put", "post", "patch", "head", "delete"], function(method) {
-    createXHR[method === "delete" ? "del" : method] = function(uri, options, callback) {
-        options = initParams(uri, options, callback)
-        options.method = method.toUpperCase()
-        return _createXHR(options)
-    }
-})
-
-function forEachArray(array, iterator) {
-    for (var i = 0; i < array.length; i++) {
-        iterator(array[i])
-    }
-}
-
-function isEmpty(obj){
-    for(var i in obj){
-        if(obj.hasOwnProperty(i)) return false
-    }
-    return true
-}
-
-function initParams(uri, options, callback) {
-    var params = uri
-
-    if (isFunction(options)) {
-        callback = options
-        if (typeof uri === "string") {
-            params = {uri:uri}
-        }
-    } else {
-        params = xtend(options, {uri: uri})
-    }
-
-    params.callback = callback
-    return params
-}
-
-function createXHR(uri, options, callback) {
-    options = initParams(uri, options, callback)
-    return _createXHR(options)
-}
-
-function _createXHR(options) {
-    if(typeof options.callback === "undefined"){
-        throw new Error("callback argument missing")
-    }
-
-    var called = false
-    var callback = function cbOnce(err, response, body){
-        if(!called){
-            called = true
-            options.callback(err, response, body)
-        }
-    }
-
-    function readystatechange() {
-        if (xhr.readyState === 4) {
-            setTimeout(loadFunc, 0)
-        }
-    }
-
-    function getBody() {
-        // Chrome with requestType=blob throws errors arround when even testing access to responseText
-        var body = undefined
-
-        if (xhr.response) {
-            body = xhr.response
-        } else {
-            body = xhr.responseText || getXml(xhr)
-        }
-
-        if (isJson) {
-            try {
-                body = JSON.parse(body)
-            } catch (e) {}
-        }
-
-        return body
-    }
-
-    function errorFunc(evt) {
-        clearTimeout(timeoutTimer)
-        if(!(evt instanceof Error)){
-            evt = new Error("" + (evt || "Unknown XMLHttpRequest Error") )
-        }
-        evt.statusCode = 0
-        return callback(evt, failureResponse)
-    }
-
-    // will load the data & process the response in a special response object
-    function loadFunc() {
-        if (aborted) return
-        var status
-        clearTimeout(timeoutTimer)
-        if(options.useXDR && xhr.status===undefined) {
-            //IE8 CORS GET successful response doesn't have a status field, but body is fine
-            status = 200
-        } else {
-            status = (xhr.status === 1223 ? 204 : xhr.status)
-        }
-        var response = failureResponse
-        var err = null
-
-        if (status !== 0){
-            response = {
-                body: getBody(),
-                statusCode: status,
-                method: method,
-                headers: {},
-                url: uri,
-                rawRequest: xhr
-            }
-            if(xhr.getAllResponseHeaders){ //remember xhr can in fact be XDR for CORS in IE
-                response.headers = parseHeaders(xhr.getAllResponseHeaders())
-            }
-        } else {
-            err = new Error("Internal XMLHttpRequest Error")
-        }
-        return callback(err, response, response.body)
-    }
-
-    var xhr = options.xhr || null
-
-    if (!xhr) {
-        if (options.cors || options.useXDR) {
-            xhr = new createXHR.XDomainRequest()
-        }else{
-            xhr = new createXHR.XMLHttpRequest()
-        }
-    }
-
-    var key
-    var aborted
-    var uri = xhr.url = options.uri || options.url
-    var method = xhr.method = options.method || "GET"
-    var body = options.body || options.data
-    var headers = xhr.headers = options.headers || {}
-    var sync = !!options.sync
-    var isJson = false
-    var timeoutTimer
-    var failureResponse = {
-        body: undefined,
-        headers: {},
-        statusCode: 0,
-        method: method,
-        url: uri,
-        rawRequest: xhr
-    }
-
-    if ("json" in options && options.json !== false) {
-        isJson = true
-        headers["accept"] || headers["Accept"] || (headers["Accept"] = "application/json") //Don't override existing accept header declared by user
-        if (method !== "GET" && method !== "HEAD") {
-            headers["content-type"] || headers["Content-Type"] || (headers["Content-Type"] = "application/json") //Don't override existing accept header declared by user
-            body = JSON.stringify(options.json === true ? body : options.json)
-        }
-    }
-
-    xhr.onreadystatechange = readystatechange
-    xhr.onload = loadFunc
-    xhr.onerror = errorFunc
-    // IE9 must have onprogress be set to a unique function.
-    xhr.onprogress = function () {
-        // IE must die
-    }
-    xhr.onabort = function(){
-        aborted = true;
-    }
-    xhr.ontimeout = errorFunc
-    xhr.open(method, uri, !sync, options.username, options.password)
-    //has to be after open
-    if(!sync) {
-        xhr.withCredentials = !!options.withCredentials
-    }
-    // Cannot set timeout with sync request
-    // not setting timeout on the xhr object, because of old webkits etc. not handling that correctly
-    // both npm's request and jquery 1.x use this kind of timeout, so this is being consistent
-    if (!sync && options.timeout > 0 ) {
-        timeoutTimer = setTimeout(function(){
-            if (aborted) return
-            aborted = true//IE9 may still call readystatechange
-            xhr.abort("timeout")
-            var e = new Error("XMLHttpRequest timeout")
-            e.code = "ETIMEDOUT"
-            errorFunc(e)
-        }, options.timeout )
-    }
-
-    if (xhr.setRequestHeader) {
-        for(key in headers){
-            if(headers.hasOwnProperty(key)){
-                xhr.setRequestHeader(key, headers[key])
-            }
-        }
-    } else if (options.headers && !isEmpty(options.headers)) {
-        throw new Error("Headers cannot be set on an XDomainRequest object")
-    }
-
-    if ("responseType" in options) {
-        xhr.responseType = options.responseType
-    }
-
-    if ("beforeSend" in options &&
-        typeof options.beforeSend === "function"
-    ) {
-        options.beforeSend(xhr)
-    }
-
-    // Microsoft Edge browser sends "undefined" when send is called with undefined value.
-    // XMLHttpRequest spec says to pass null as body to indicate no body
-    // See https://github.com/naugtur/xhr/issues/100.
-    xhr.send(body || null)
-
-    return xhr
-
-
-}
-
-function getXml(xhr) {
-    // xhr.responseXML will throw Exception "InvalidStateError" or "DOMException"
-    // See https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseXML.
-    try {
-        if (xhr.responseType === "document") {
-            return xhr.responseXML
-        }
-        var firefoxBugTakenEffect = xhr.responseXML && xhr.responseXML.documentElement.nodeName === "parsererror"
-        if (xhr.responseType === "" && !firefoxBugTakenEffect) {
-            return xhr.responseXML
-        }
-    } catch (e) {}
-
-    return null
-}
-
-function noop() {}
-
-},{"global/window":303,"is-function":328,"parse-headers":396,"xtend":534}],528:[function(require,module,exports){
+},{"./normalize-response":525,"xhr":533}],527:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -65620,7 +65379,7 @@ var SyntaxError = /** @class */ (function (_super) {
 }(Error));
 exports.SyntaxError = SyntaxError;
 
-},{}],529:[function(require,module,exports){
+},{}],528:[function(require,module,exports){
 "use strict";
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
@@ -65630,7 +65389,7 @@ __export(require("./xml-http-request"));
 var xml_http_request_event_target_1 = require("./xml-http-request-event-target");
 exports.XMLHttpRequestEventTarget = xml_http_request_event_target_1.XMLHttpRequestEventTarget;
 
-},{"./xml-http-request":533,"./xml-http-request-event-target":531}],530:[function(require,module,exports){
+},{"./xml-http-request":532,"./xml-http-request-event-target":530}],529:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var ProgressEvent = /** @class */ (function () {
@@ -65646,7 +65405,7 @@ var ProgressEvent = /** @class */ (function () {
 }());
 exports.ProgressEvent = ProgressEvent;
 
-},{}],531:[function(require,module,exports){
+},{}],530:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var XMLHttpRequestEventTarget = /** @class */ (function () {
@@ -65688,7 +65447,7 @@ var XMLHttpRequestEventTarget = /** @class */ (function () {
 }());
 exports.XMLHttpRequestEventTarget = XMLHttpRequestEventTarget;
 
-},{}],532:[function(require,module,exports){
+},{}],531:[function(require,module,exports){
 (function (Buffer){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
@@ -65769,7 +65528,7 @@ var XMLHttpRequestUpload = /** @class */ (function (_super) {
 exports.XMLHttpRequestUpload = XMLHttpRequestUpload;
 
 }).call(this,require("buffer").Buffer)
-},{"./xml-http-request-event-target":531,"buffer":54}],533:[function(require,module,exports){
+},{"./xml-http-request-event-target":530,"buffer":54}],532:[function(require,module,exports){
 (function (process,Buffer){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
@@ -66219,7 +65978,256 @@ XMLHttpRequest.prototype.nodejsHttpsAgent = https.globalAgent;
 XMLHttpRequest.prototype.nodejsBaseUrl = null;
 
 }).call(this,require('_process'),require("buffer").Buffer)
-},{"./errors":528,"./progress-event":530,"./xml-http-request-event-target":531,"./xml-http-request-upload":532,"_process":128,"buffer":54,"cookiejar":237,"http":166,"https":107,"os":116,"url":173}],534:[function(require,module,exports){
+},{"./errors":527,"./progress-event":529,"./xml-http-request-event-target":530,"./xml-http-request-upload":531,"_process":128,"buffer":54,"cookiejar":237,"http":166,"https":107,"os":116,"url":173}],533:[function(require,module,exports){
+"use strict";
+var window = require("global/window")
+var isFunction = require("is-function")
+var parseHeaders = require("parse-headers")
+var xtend = require("xtend")
+
+module.exports = createXHR
+// Allow use of default import syntax in TypeScript
+module.exports.default = createXHR;
+createXHR.XMLHttpRequest = window.XMLHttpRequest || noop
+createXHR.XDomainRequest = "withCredentials" in (new createXHR.XMLHttpRequest()) ? createXHR.XMLHttpRequest : window.XDomainRequest
+
+forEachArray(["get", "put", "post", "patch", "head", "delete"], function(method) {
+    createXHR[method === "delete" ? "del" : method] = function(uri, options, callback) {
+        options = initParams(uri, options, callback)
+        options.method = method.toUpperCase()
+        return _createXHR(options)
+    }
+})
+
+function forEachArray(array, iterator) {
+    for (var i = 0; i < array.length; i++) {
+        iterator(array[i])
+    }
+}
+
+function isEmpty(obj){
+    for(var i in obj){
+        if(obj.hasOwnProperty(i)) return false
+    }
+    return true
+}
+
+function initParams(uri, options, callback) {
+    var params = uri
+
+    if (isFunction(options)) {
+        callback = options
+        if (typeof uri === "string") {
+            params = {uri:uri}
+        }
+    } else {
+        params = xtend(options, {uri: uri})
+    }
+
+    params.callback = callback
+    return params
+}
+
+function createXHR(uri, options, callback) {
+    options = initParams(uri, options, callback)
+    return _createXHR(options)
+}
+
+function _createXHR(options) {
+    if(typeof options.callback === "undefined"){
+        throw new Error("callback argument missing")
+    }
+
+    var called = false
+    var callback = function cbOnce(err, response, body){
+        if(!called){
+            called = true
+            options.callback(err, response, body)
+        }
+    }
+
+    function readystatechange() {
+        if (xhr.readyState === 4) {
+            setTimeout(loadFunc, 0)
+        }
+    }
+
+    function getBody() {
+        // Chrome with requestType=blob throws errors arround when even testing access to responseText
+        var body = undefined
+
+        if (xhr.response) {
+            body = xhr.response
+        } else {
+            body = xhr.responseText || getXml(xhr)
+        }
+
+        if (isJson) {
+            try {
+                body = JSON.parse(body)
+            } catch (e) {}
+        }
+
+        return body
+    }
+
+    function errorFunc(evt) {
+        clearTimeout(timeoutTimer)
+        if(!(evt instanceof Error)){
+            evt = new Error("" + (evt || "Unknown XMLHttpRequest Error") )
+        }
+        evt.statusCode = 0
+        return callback(evt, failureResponse)
+    }
+
+    // will load the data & process the response in a special response object
+    function loadFunc() {
+        if (aborted) return
+        var status
+        clearTimeout(timeoutTimer)
+        if(options.useXDR && xhr.status===undefined) {
+            //IE8 CORS GET successful response doesn't have a status field, but body is fine
+            status = 200
+        } else {
+            status = (xhr.status === 1223 ? 204 : xhr.status)
+        }
+        var response = failureResponse
+        var err = null
+
+        if (status !== 0){
+            response = {
+                body: getBody(),
+                statusCode: status,
+                method: method,
+                headers: {},
+                url: uri,
+                rawRequest: xhr
+            }
+            if(xhr.getAllResponseHeaders){ //remember xhr can in fact be XDR for CORS in IE
+                response.headers = parseHeaders(xhr.getAllResponseHeaders())
+            }
+        } else {
+            err = new Error("Internal XMLHttpRequest Error")
+        }
+        return callback(err, response, response.body)
+    }
+
+    var xhr = options.xhr || null
+
+    if (!xhr) {
+        if (options.cors || options.useXDR) {
+            xhr = new createXHR.XDomainRequest()
+        }else{
+            xhr = new createXHR.XMLHttpRequest()
+        }
+    }
+
+    var key
+    var aborted
+    var uri = xhr.url = options.uri || options.url
+    var method = xhr.method = options.method || "GET"
+    var body = options.body || options.data
+    var headers = xhr.headers = options.headers || {}
+    var sync = !!options.sync
+    var isJson = false
+    var timeoutTimer
+    var failureResponse = {
+        body: undefined,
+        headers: {},
+        statusCode: 0,
+        method: method,
+        url: uri,
+        rawRequest: xhr
+    }
+
+    if ("json" in options && options.json !== false) {
+        isJson = true
+        headers["accept"] || headers["Accept"] || (headers["Accept"] = "application/json") //Don't override existing accept header declared by user
+        if (method !== "GET" && method !== "HEAD") {
+            headers["content-type"] || headers["Content-Type"] || (headers["Content-Type"] = "application/json") //Don't override existing accept header declared by user
+            body = JSON.stringify(options.json === true ? body : options.json)
+        }
+    }
+
+    xhr.onreadystatechange = readystatechange
+    xhr.onload = loadFunc
+    xhr.onerror = errorFunc
+    // IE9 must have onprogress be set to a unique function.
+    xhr.onprogress = function () {
+        // IE must die
+    }
+    xhr.onabort = function(){
+        aborted = true;
+    }
+    xhr.ontimeout = errorFunc
+    xhr.open(method, uri, !sync, options.username, options.password)
+    //has to be after open
+    if(!sync) {
+        xhr.withCredentials = !!options.withCredentials
+    }
+    // Cannot set timeout with sync request
+    // not setting timeout on the xhr object, because of old webkits etc. not handling that correctly
+    // both npm's request and jquery 1.x use this kind of timeout, so this is being consistent
+    if (!sync && options.timeout > 0 ) {
+        timeoutTimer = setTimeout(function(){
+            if (aborted) return
+            aborted = true//IE9 may still call readystatechange
+            xhr.abort("timeout")
+            var e = new Error("XMLHttpRequest timeout")
+            e.code = "ETIMEDOUT"
+            errorFunc(e)
+        }, options.timeout )
+    }
+
+    if (xhr.setRequestHeader) {
+        for(key in headers){
+            if(headers.hasOwnProperty(key)){
+                xhr.setRequestHeader(key, headers[key])
+            }
+        }
+    } else if (options.headers && !isEmpty(options.headers)) {
+        throw new Error("Headers cannot be set on an XDomainRequest object")
+    }
+
+    if ("responseType" in options) {
+        xhr.responseType = options.responseType
+    }
+
+    if ("beforeSend" in options &&
+        typeof options.beforeSend === "function"
+    ) {
+        options.beforeSend(xhr)
+    }
+
+    // Microsoft Edge browser sends "undefined" when send is called with undefined value.
+    // XMLHttpRequest spec says to pass null as body to indicate no body
+    // See https://github.com/naugtur/xhr/issues/100.
+    xhr.send(body || null)
+
+    return xhr
+
+
+}
+
+function getXml(xhr) {
+    // xhr.responseXML will throw Exception "InvalidStateError" or "DOMException"
+    // See https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseXML.
+    try {
+        if (xhr.responseType === "document") {
+            return xhr.responseXML
+        }
+        var firefoxBugTakenEffect = xhr.responseXML && xhr.responseXML.documentElement.nodeName === "parsererror"
+        if (xhr.responseType === "" && !firefoxBugTakenEffect) {
+            return xhr.responseXML
+        }
+    } catch (e) {}
+
+    return null
+}
+
+function noop() {}
+
+},{"global/window":303,"is-function":328,"parse-headers":396,"xtend":534}],534:[function(require,module,exports){
 arguments[4][179][0].apply(exports,arguments)
 },{"dup":179}],535:[function(require,module,exports){
 (function (global,Buffer){
