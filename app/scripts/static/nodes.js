@@ -55,7 +55,7 @@ async function populateLocationCharts(){
         //locations['Canada'] = 1;
         for(var i = 0; i < nodeCache.length; i++){
             var node = nodeCache[i];
-            var result = await $.get( "http://ip-api.com/json/"+node.ipAddress);
+            var result = await $.get( "https://ip-api.com/json/"+node.ipAddress);
             var country = result["country"];
             if(country !== undefined){
                 if(country in locations){
