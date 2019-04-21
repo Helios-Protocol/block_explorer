@@ -51,32 +51,24 @@ async function populateLocationCharts(){
     if(nodeCache.length > 0){
         console.log("plotting node locations")
         var myChart = echarts.init(document.getElementById('global_node_chart'));
-        var locations = {};
-        //locations['Canada'] = 1;
-        for(var i = 0; i < nodeCache.length; i++){
-            var node = nodeCache[i];
-            var result = await $.get( "https://ip-api.com/json/"+node.ipAddress);
-            var country = result["country"];
-            if(country !== undefined){
-                if(country in locations){
-                    locations[country]++;
-                }else{
-                    locations[country] = 1;
-                }
-            }
-        }
+        var nodeIpAddresses = nodeCache.map(node => node.ipAddress);
+
+        var locations = await geolocationHelpers.getNodeCountryFrequency(nodeIpAddresses);
 
         var data = [];
-        var yellow = false;
+        var colorId = 0;
         for (var key in locations) {
             if (locations.hasOwnProperty(key)) {
                 console.log(key, locations[key]);
-                if(yellow){
-                    var color="#d4d4d4";
-                    yellow = false;
-                }else{
+                if(colorId === 0){
+                    var color="#fff";
+                    colorId = 1;
+                }else if(colorId === 1){
                     var color="#e6d46a";
-                    yellow = true;
+                    colorId = 2;
+                }else if(colorId === 2){
+                    var color="#000";
+                    colorId = 0;
                 }
                 data.push({
                     value:locations[key],
