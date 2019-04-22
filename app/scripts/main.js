@@ -1,8 +1,11 @@
 var web3_main = require('./web3.js');
 var helios_web3 = web3_main.web3;
 var fileSaver = require("file-saver");
-var ConnectionMaintainer = require("./node_connection_helpers.js").ConnectionMaintainer;
-var getNodeMessageFromError = require("./node_connection_helpers.js").getNodeMessageFromError;
+
+var HeliosUtils = require('helios-utils');
+var ConnectionMaintainer = HeliosUtils.ConnectionMaintainer;
+var getNodeMessageFromError = HeliosUtils.getNodeMessageFromError;
+
 var geolocationHelpers = require("./geolocation_helpers.js");
 
 // var availableNodes = [
@@ -19,7 +22,7 @@ var availableNodes = [
     "wss://bootnode.heliosprotocol.io:30304"
 ];
 
-var connectionMaintainer = new ConnectionMaintainer(availableNodes);
+var connectionMaintainer = new ConnectionMaintainer(helios_web3, availableNodes);
 connectionMaintainer.startNetworkConnectionMaintainerLoop();
 
 
