@@ -81,7 +81,7 @@ function populateBlockDetails(hash) {
                             "<h4>Proof #" + i + "</h4>" +
                             "<div class='clear_both'><div class='object_detail_label'>Sender wallet address</div><div class='object_detail_description'><a href='#main_page-address&"+proof.sender+"'>" + proof.sender + "</a></div></div>" +
                             "<div class='clear_both'><div class='object_detail_label'>Recipient wallet address</div><div class='object_detail_description'><a href='#main_page-address&"+proof.recipientNodeWalletAddress+"'>" + proof.recipientNodeWalletAddress + "</a></div></div>" +
-                            "<div class='clear_both'><div class='object_detail_label'>Score (max 100,000)</div><div class='object_detail_description'>" + proof.score + "</div></div>" +
+                            "<div class='clear_both'><div class='object_detail_label'>Score (max 1,000,000)</div><div class='object_detail_description'>" + proof.score + "</div></div>" +
                             "<div class='clear_both'><div class='object_detail_label'>Timestamp</div><div class='object_detail_description'>" + proof.timestamp + "</div></div>" +
                             "<div class='clear_both'><div class='object_detail_label'>Previous reward block #</div><div class='object_detail_description'>" + proof.sinceBlockNumber + "</div></div>" +
                             "<div class='clear_both'><div class='object_detail_label'>Chain head hash of sender</div><div class='object_detail_description'>" + proof.headHashOfSenderChain + "</div></div>" +
