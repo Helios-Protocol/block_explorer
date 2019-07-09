@@ -61,7 +61,7 @@ async function populateLocationCharts(){
             if (locations.hasOwnProperty(key)) {
                 console.log(key, locations[key]);
                 if(colorId === 0){
-                    var color="#fff";
+                    var color="#ccc";
                     colorId = 1;
                 }else if(colorId === 1){
                     var color="#e6d46a";
@@ -73,7 +73,7 @@ async function populateLocationCharts(){
                 data.push({
                     value:locations[key],
                     name: key,
-                    itemStyle:{color:color}
+                    //itemStyle:{color:color}
                 })
             }
         }
