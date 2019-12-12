@@ -4,12 +4,15 @@ var newBlockListLength = 10;
 var newestTransactionsPageIdx = {}
 var nodeCache = [];
 
+
 $( document ).ready(function() {
 
     //connectionMaintainer.setStatusCallback(set_connection_status);
+    set_connection_status("Connecting to " + networkNames[connectionMaintainer.networkId]);
 
     web3 = helios_web3;
     connectionMaintainer.setConnectedCallback(connectedCallback);
+
 
     $('body').on('click', '.newest_blocks_nav', function(e) {
         var start = $(this).data('start');
@@ -56,16 +59,27 @@ $( document ).ready(function() {
 
 
 
+    $('body').on('click', '.network_connection_menu', function(e) {
+        var selectedNetworkId = parseInt($(this).data('network_id'));
+        switchToNetworkId(selectedNetworkId);
 
-
-
+    });
 
 
 });
 
+function switchToNetworkId(networkId){
+    if(connectionMaintainer.networkId != networkId){
+        window.location.href = "https://" + networkBlockExplorerURLs[networkId];
+    }else{
+        popup("You are already connected to " + networkNames[networkId]);
+    }
+}
 
 function connectedCallback(){
     goToHashFromURL();
+    var connectedNetworkId = connectionMaintainer.networkId
+    set_connection_status("Connected to " + networkNames[connectedNetworkId]);
 }
 
 function sleep(ms) {

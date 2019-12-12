@@ -7,21 +7,21 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js"></script>
-    <script src="https://echarts.baidu.com/dist/echarts.min.js"></script>
-    <script src="js/helios-block-explorer-master.js?version=6"></script>
-    <script src="js/utils.js?version=5"></script>
-    <script src="js/visual.js?version=5"></script>
-    <script src="js/main.js?version=5"></script>
-    <script src="js/menu.js?version=5"></script>
-    <script src="js/nodes.js?version=6"></script>
-    <script src="js/address.js?version=5"></script>
-    <script src="js/blocks_and_transactions.js?version=5"></script>
-    <script src="js/custom_select.js?version=5"></script>
+    <script src="js/echarts.min.js?version=10"></script>
+    <script src="js/helios-block-explorer-master.js?version=10"></script>
+    <script src="js/utils.js?version=10"></script>
+    <script src="js/visual.js?version=10"></script>
+    <script src="js/main.js?version=10"></script>
+    <script src="js/menu.js?version=10"></script>
+    <script src="js/nodes.js?version=10"></script>
+    <script src="js/address.js?version=10"></script>
+    <script src="js/blocks_and_transactions.js?version=10"></script>
+    <script src="js/custom_select.js?version=10"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/menu.css?version=5">
-    <link rel="stylesheet" href="css/main.css?version=5">
+    <link rel="stylesheet" href="css/menu.css?version=10">
+    <link rel="stylesheet" href="css/main.css?version=10">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#000" />
@@ -97,23 +97,29 @@
                         Network stats
                     </a>
                 </li>
+                <li role="presentation" class="nav__item menu_root has_submenu nav__item--left menu_root">
+                    <div  id='connection_status' class='nav__link'>
+                        Connecting to Mainnet
+                    </div>
+                    <ul class="nav__dropdown" id='online_wallets_menu_list'>
+                        <li role="presentation" id='main_page-add_online_wallet-menu_item' class="nav__item">
+                            <div  class='network_connection_menu nav__link' data-network_id="1">
+                                Mainnet
+                            </div>
+                        </li>
+                        <li role="presentation" id='main_page-add_online_wallet-menu_item' class="nav__item" >
+                            <div class='network_connection_menu nav__link' data-network_id="42">
+                                Hypothesis Testnet
+                            </div>
+                        </li>
+                    </ul>
+                </li>
                 <!--<li role="presentation" id='main_page-top_accounts-menu_item' class="nav__item menu_root">-->
                     <!--<a href="#main_page-top_accounts" class='nav__link'>-->
                         <!--Top Accounts-->
                     <!--</a>-->
                 <!--</li>-->
-                <!--<li role="presentation" class="nav__item menu_root has_submenu nav__item&#45;&#45;left online_menu_item">-->
-                    <!--<div  class='nav__link'>-->
-                        <!--Online wallets-->
-                    <!--</div>-->
-                     <!--<ul class="nav__dropdown" id='online_wallets_menu_list'>-->
-                        <!--<li role="presentation" id='main_page-add_online_wallet-menu_item' class="nav__item">-->
-                            <!--<a href="#main_page-add_online_wallet"  class='nav__link'>-->
-                                <!--Add wallet-->
-                            <!--</a>-->
-                        <!--</li>-->
-                    <!--</ul>-->
-                <!--</li>-->
+
             </ul>
         </nav>
 
