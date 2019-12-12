@@ -104,7 +104,7 @@ function getDetailHtmlForSendTx(sendTx){
                 "<div class='clear_both'><div class='object_detail_label'>Nonce</div><div class='object_detail_description'>" + sendTx.nonce + "</div></div>" +
                 "<div class='clear_both'><div class='object_detail_label'>Block hash</div><div class='object_detail_description'><a href='#main_page-block&"+sendTx['blockHash']+"'>"+sendTx['blockHash']+" </a></div></div>" +
                 "<div class='clear_both'><div class='object_detail_label'>From</div><div class='object_detail_description'><a href='#main_page-address&"+sendTx.from+"'>" + sendTx.from + "</a></div></div>" +
-                "<div class='clear_both'><div class='object_detail_label'>To</div><div class='object_detail_description'><a href='#main_page-address&"+sendTx.to+"'>" + sendTx.to + "</a></div></div>" +
+                "<div class='clear_both'><div class='object_detail_label'>To</div><div class='object_detail_description'><a href='#main_page-address&"+((sendTx.to === null) ? "0x" : sendTx.to)+"'>" + ((sendTx.to === null) ? "Create Address" : sendTx.to) + "</a></div></div>" +
                 "<div class='clear_both'><div class='object_detail_label'>Amount (HLS)</div><div class='object_detail_description'>" + web3.utils.fromWei(sendTx.value) + "</div></div>" +
                 "<div class='clear_both'><div class='object_detail_label'>Max gas (Gwei)</div><div class='object_detail_description'>" + sendTx.gas + "</div></div>" +
                 "<div class='clear_both'><div class='object_detail_label'>Gas used</div><div class='object_detail_description'>" + sendTx.gasUsed + "</div></div>" +
