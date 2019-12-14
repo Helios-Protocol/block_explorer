@@ -10,7 +10,7 @@ function populateBlockDetails(hash) {
         $('#block_header_details').html('');
         $('#block_header_details').append("<div class='clear_both'></div><div class='object_detail_label'>Block hash</div><div class='object_detail_description'>" + block.hash + "</div></div>");
         $('#block_header_details').append("<div class='clear_both'><div class='object_detail_label'>Block number</div><div class='object_detail_description'>" + block.number + "</div></div>");
-        $('#block_header_details').append("<div class='clear_both'><div class='object_detail_label'>Timestamp</div><div class='object_detail_description'>" + block.timestamp + "</div></div>");
+        $('#block_header_details').append("<div class='clear_both'><div class='object_detail_label'>Timestamp</div><div class='object_detail_description'>" + block.timestamp + " ("+timeConverter(block.timestamp)+")</div></div>");
         $('#block_header_details').append("<div class='clear_both'></div><div class='object_detail_label'>Chain address</div><div class='object_detail_description'><a href='#main_page-address&"+block.chainAddress+"'>" + block.chainAddress + "</a></div></div>");
         $('#block_header_details').append("<div class='clear_both'><div class='object_detail_label'>Signed by</div><div class='object_detail_description'><a href='#main_page-address&"+block.sender+"'>" + block.sender + "</a></div></div>");
         $('#block_header_details').append("<div class='clear_both'><div class='object_detail_label'>Account hash</div><div class='object_detail_description'>" + block.accountHash + "</div></div>");
@@ -101,9 +101,10 @@ function getDetailHtmlForSendTx(sendTx){
     var html = "<div class='clear_both'>" +
                 "<a href='#main_page-transaction&"+sendTx['hash']+"'><h3 class='hash'>Tx "+sendTx['transactionIndex']+" with hash " + sendTx['hash'] + "</h3></a>" +
                 "<div class='clear_both'><div class='object_detail_label'>Transaction index</div><div class='object_detail_description'>" + sendTx.transactionIndex + "</div></div>" +
+                "<div class='clear_both'><div class='object_detail_label'>Nonce</div><div class='object_detail_description'>" + sendTx.nonce + "</div></div>" +
                 "<div class='clear_both'><div class='object_detail_label'>Block hash</div><div class='object_detail_description'><a href='#main_page-block&"+sendTx['blockHash']+"'>"+sendTx['blockHash']+" </a></div></div>" +
                 "<div class='clear_both'><div class='object_detail_label'>From</div><div class='object_detail_description'><a href='#main_page-address&"+sendTx.from+"'>" + sendTx.from + "</a></div></div>" +
-                "<div class='clear_both'><div class='object_detail_label'>To</div><div class='object_detail_description'><a href='#main_page-address&"+sendTx.to+"'>" + sendTx.to + "</a></div></div>" +
+                "<div class='clear_both'><div class='object_detail_label'>To</div><div class='object_detail_description'><a href='#main_page-address&"+((sendTx.to === null) ? "0x" : sendTx.to)+"'>" + ((sendTx.to === null) ? "Create Address" : sendTx.to) + "</a></div></div>" +
                 "<div class='clear_both'><div class='object_detail_label'>Amount (HLS)</div><div class='object_detail_description'>" + web3.utils.fromWei(sendTx.value) + "</div></div>" +
                 "<div class='clear_both'><div class='object_detail_label'>Max gas (Gwei)</div><div class='object_detail_description'>" + sendTx.gas + "</div></div>" +
                 "<div class='clear_both'><div class='object_detail_label'>Gas used</div><div class='object_detail_description'>" + sendTx.gasUsed + "</div></div>" +

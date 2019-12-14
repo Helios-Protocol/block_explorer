@@ -122,11 +122,11 @@ var set_min_gas_price_status = function(status){
 }
 
 var set_connection_status = function(status, connected){
-    if(connected){
-        $('#connection_status_icon').attr('src', 'images/check_mark.png');
-    }else{
-        $('#connection_status_icon').attr('src', 'images/x.png');
-    }
+    // if(connected){
+    //     $('#connection_status_icon').attr('src', 'images/check_mark.png');
+    // }else{
+    //     $('#connection_status_icon').attr('src', 'images/x.png');
+    // }
     $('#connection_status').text(status);
 }
 

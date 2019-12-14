@@ -242,7 +242,7 @@ nav{
 .nav__dropdown .nav__link,
 .nav__dropdown .nav__header {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 13px;
   color: #e6dda7;
   background: rgba(0, 0, 0, 1);
 }

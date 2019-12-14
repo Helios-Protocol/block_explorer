@@ -8,22 +8,40 @@ var getNodeMessageFromError = HeliosUtils.getNodeMessageFromError;
 
 var geolocationHelpers = require("./geolocation_helpers.js");
 
-// var availableNodes = [
-//     "ws://127.0.0.1:30304",
-//     "ws://142.58.49.25:30304"
-// ];
+var networkNames = {
+    1: "Mainnet",
+    42: "Hypothesis Testnet"
+}
+var networkBlockExplorerURLs =  {
+    1: "heliosprotocol.io/block-explorer/",
+    42: "heliosprotocol.io/block-explorer-hypothesis/"
+}
 
-// var availableNodes = [
-//     "ws://127.0.0.1:30304",
-// ];
+var availableNodes = {
+    1: [
+        "wss://bootnode.heliosprotocol.io:30304",
+        "wss://bootnode2.heliosprotocol.io:30304",
+        "wss://bootnode3.heliosprotocol.io:30304",
+        "wss://masternode1.heliosprotocol.io:30304"
+    ],
+    42: [
+        "wss://hypothesis1.heliosprotocol.io:30304"
+    ]
+};
 
+function getNetworkIdFromURL(){
+    var URL = window.location.href
+    for (var k in networkBlockExplorerURLs){
+        if(URL.includes(networkBlockExplorerURLs[k])){
+            console.log("Got network id "+ k + " from url")
+            return k;
+        }
+    }
+    return 1;
 
-var availableNodes = [
-    "wss://bootnode.heliosprotocol.io:30304",
-    "wss://bootnode2.heliosprotocol.io:30304"
-];
+}
 
-var connectionMaintainer = new ConnectionMaintainer(helios_web3, availableNodes);
+var connectionMaintainer = new ConnectionMaintainer(helios_web3, availableNodes, undefined, getNetworkIdFromURL());
 connectionMaintainer.startNetworkConnectionMaintainerLoop();
 
 
@@ -43,6 +61,12 @@ if (typeof window !== 'undefined') {
     if (typeof window.geolocationHelpers === 'undefined'){
         window.geolocationHelpers = geolocationHelpers;
     }
+    if (typeof window.networkNames === 'undefined'){
+        window.networkNames = networkNames;
+    }
+    if (typeof window.networkBlockExplorerURLs === 'undefined'){
+        window.networkBlockExplorerURLs = networkBlockExplorerURLs;
+    }
 }
 
 
@@ -51,5 +75,7 @@ module.exports = {
     helios_web3: helios_web3,
     connectionMaintainer:connectionMaintainer,
     getNodeMessageFromError:getNodeMessageFromError,
-    geolocationHelpers: geolocationHelpers
+    geolocationHelpers: geolocationHelpers,
+    networkNames: networkNames,
+    networkBlockExplorerURLs: networkBlockExplorerURLs
 };
